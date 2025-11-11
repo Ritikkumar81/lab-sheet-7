@@ -10,3 +10,4 @@ int main() {
     cout << "The length of the string is: " << length << endl;
     return 0;
 }
+ 
