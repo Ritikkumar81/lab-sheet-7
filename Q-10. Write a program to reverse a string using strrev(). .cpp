@@ -1,23 +1,22 @@
-#include <stdio.h>
-#include <string.h>
+#include <iostream>
+#include <cstring>
+using namespace std;
 
 int main() {
     char str[100];
-    int i, j;
-    char temp;
+    
+    cout << "Enter a string: ";
+    cin.getline(str, 100); // Read a string including spaces
 
-    printf("Enter a string: ");
-    scanf("%s", str);
-
-    j = strlen(str) - 1;  
-
-    for(i = 0; i < j; i++, j--) {
-        temp = str[i];
-        str[i] = str[j];
-        str[j] = temp;
+    int len = strlen(str);
+    
+    for(int i = 0; i < len / 2; i++) {
+        char temp = str[i];
+        str[i] = str[len - i - 1];
+        str[len - i - 1] = temp;
     }
 
-    printf("Reversed string: %s\n", str);
+    cout << "Reversed string: " << str << endl;
 
     return 0;
 }
